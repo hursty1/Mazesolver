@@ -53,7 +53,7 @@ class Cell:
         self._x2 = None
         self._y1 = None
         self._y2 = None
-        self._win = win
+        self._win:Window = win
 
     def draw(self, x1, y1, x2, y2):
         self._x1 = x1
@@ -67,8 +67,20 @@ class Cell:
             top_line = Line(Point(self._x1, self._y1), Point(self._x2, self._y1))
             self._win.draw_line(top_line)
         if self.has_bottom_wall:
-            bottom_line = Line(Point(self._x2, self._y2), Point(self._x2, self._y2))
+            bottom_line = Line(Point(self._x1, self._y2), Point(self._x2, self._y2))
             self._win.draw_line(bottom_line)
         if self.has_right_wall:
             right_line = Line(Point(self._x2, self._y1), Point(self._x2, self._y2))
             self._win.draw_line(right_line)
+
+    def get_center(self) -> Point:
+        half = abs(self._x1 - self._x2) // 2
+        return Point(self._x1 + half, self._y1 + half)
+    
+    def draw_move(self, to_cell, undo=False):
+        color = 'red'
+        if undo:
+            color = 'grey'
+        line = Line(self.get_center(), to_cell.get_center())
+        self._win.draw_line(line,color)
+        

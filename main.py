@@ -16,8 +16,13 @@ if __name__ == "__main__":
     c.has_bottom_wall = False
     c.draw(225, 225, 250, 250)
 
-    c = Cell(win)
-    c.has_top_wall = False
-    c.draw(300, 300, 500, 500)
+    c1 = Cell(win)
+    c1.has_top_wall = False
+    c1.draw(300, 300, 500, 500)
+
+    c.draw_move(c1)
+
+    c2 = Cell(win)
+    c2.draw(200,200,240,240)
 
     win.wait_for_close()
