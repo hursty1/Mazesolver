@@ -10,5 +10,5 @@ if __name__ == "__main__":
     screen_y = 400
     cell_size_x = (screen_x - 2 * margin) / num_cols
     cell_size_y = (screen_y - 2 * margin) / num_rows
-    maze = maze(margin, margin, num_rows, num_cols, cell_size_x, cell_size_y, win)
+    maze = maze(margin, margin, num_rows, num_cols, cell_size_x, cell_size_y, win, 10)
     win.wait_for_close()

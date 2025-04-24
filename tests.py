@@ -51,5 +51,21 @@ class Tests(unittest.TestCase):
             m1._cells[num_cols - 1][num_rows - 1].has_right_wall,
             False,
         )
+    def test_maze_visted_reset(self):
+        num_cols = 10
+        num_rows = 10
+        m1 = Maze(0, 0, num_rows, num_cols, 10, 10, None, 10)
+        self.assertEqual(
+            m1._cells[0][0].visited,
+            False,
+        )
+    def test_maze_visted_reset2(self):
+        num_cols = 10
+        num_rows = 10
+        m1 = Maze(0, 0, num_rows, num_cols, 10, 10, None, 10)
+        self.assertEqual(
+            m1._cells[5][5].visited,
+            False,
+        )   
 if __name__ == "__main__":
     unittest.main()
