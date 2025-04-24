@@ -90,7 +90,7 @@ class Cell:
             self._win.draw_line(right_line, fill_color="white")
 
     def get_center(self) -> Point:
-        half = abs(self._x1 - self._x2) // 2
+        half = abs(self._x2 - self._x1) // 2
         return Point(self._x1 + half, self._y1 + half)
     
     def draw_move(self, to_cell, undo=False):
