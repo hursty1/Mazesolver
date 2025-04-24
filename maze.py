@@ -111,6 +111,7 @@ class maze:
             #move 
             self._break_walls_r(next_index[0], next_index[1])
     def _solve_r(self, i, j) -> bool:
+        "using depth-first algorithm"
         #animate
         self._animate()
         #mark visited
